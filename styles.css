@@ -1,35 +1,92 @@
-/* Outdated CSS */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
+    padding: 0;
+    background-color: #FAF5F1; /* White fog */
+}
+
+.header, .footer {
+    background-color: #A41F13; /* Fresh red */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar {
+    background-color: #292F36; /* Carbon gray */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar ul {
+    list-style-type: none;
     padding: 0;
 }
 
-h1 {
-    margin: 0;
+.sidebar ul li {
+    margin: 10px 0;
 }
 
-ul {
-    margin: 0;
-    padding: 0;
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
 }
 
-li {
-    margin: 0;
-    padding: 0;
+.sidebar a:hover {
+    color: #8F7A6E;
 }
 
-p {
-    margin: 0;
-    padding: 0;
+.container {
+    display: flex;
+    flex-direction: row;
 }
 
-img {
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.grid-item {
+    background-color: white; 
+    border: 1px solid #E0DBD8; 
+    border-radius: 15px; 
+    padding: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.grid-item img {
     width: 100%;
     height: auto;
+    border-radius: 15px 15px 0 0; 
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        order: 1;
+    }
+    
+    .main-content {
+        order: 2;
+    }
 }
